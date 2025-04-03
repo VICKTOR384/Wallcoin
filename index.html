@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمودار نمایشی</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        canvas { max-width: 600px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>نمودار نمایشی</h2>
+    <canvas id="myChart"></canvas><script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    
+    let x = 0;
+    const dataPoints = [];
+    
+    for (let i = 0; i < 100; i++) {
+        dataPoints.push(Math.sin(x + i * 0.1) * 10);
+    }
+
+    const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: Array.from(Array(100).keys()),
+            datasets: [{
+                label: 'نوسانات
+
